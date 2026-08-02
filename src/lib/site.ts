@@ -8,11 +8,12 @@ export const SITE_TAGLINE =
 export const EXPERT = {
   name: "Jatinder Saini",
   // Adjust the title/credentials to match actual licensing before launch —
-  // only licensed members (e.g. CPA for public accounting, RCIC/lawyer for
-  // paid immigration representation) may advertise those designations.
-  title: "Tax, Accounting & Immigration Professional",
+  // designations (e.g. CPA; RCIC for paid immigration services) may only be
+  // advertised by licensed members. Jatinder is an immigration consultant,
+  // not a lawyer — the copy below sticks to forms/paperwork accordingly.
+  title: "Tax & Accounting Professional · Immigration Consultant",
   blurb:
-    "Jatinder helps Indian newcomers and small-business owners across Canada with personal and corporate taxes, bookkeeping, and immigration paperwork — in English, Hindi, and Punjabi.",
+    "Jatinder handles the full range of personal and business taxes, bookkeeping, and accounting for Indian newcomers and small businesses across Canada. As an immigration consultant, she takes the paperwork off your plate — forms, applications, and passport renewals, done right the first time — in English, Hindi, and Punjabi.",
   languages: ["English", "Hindi", "Punjabi"],
   // Fill these in to activate the contact buttons on /expert and the
   // lead cards across the site. Leave empty ("") to show "opening soon".

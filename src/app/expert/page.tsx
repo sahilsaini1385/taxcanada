@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   description: `Book a consultation with ${EXPERT.name} — ${EXPERT.title.toLowerCase()} serving Indian newcomers across Canada in English, Hindi, and Punjabi.`,
 };
 
-const SERVICES: { icon: IconName; title: string; items: string[] }[] = [
+const SERVICES: {
+  icon: IconName;
+  title: string;
+  note?: string;
+  items: string[];
+}[] = [
   {
     icon: "calculator",
-    title: "Personal taxes",
+    title: "Personal taxes — full service",
     items: [
       "First-year newcomer returns (world income, treaty relief)",
       "Foreign asset reporting (T1135) done right",
@@ -21,22 +26,25 @@ const SERVICES: { icon: IconName; title: string; items: string[] }[] = [
   },
   {
     icon: "store",
-    title: "Business & accounting",
+    title: "Business & accounting — full service",
+    note: "Too small for a full-time accountant? Hire Jatinder only when you need her — bookkeeping catch-ups, filings, and paperwork, as they come up.",
     items: [
-      "Incorporation: when it helps, when it doesn't",
-      "GST/HST registration and filings",
       "Bookkeeping and year-end financials",
-      "Salary vs dividends planning for owner-operators",
+      "GST/HST registration and filings",
+      "Incorporation paperwork: when it helps, when it doesn't",
+      "Payroll, salary vs dividends, and owner-operator planning",
+      "On-call support for businesses without in-house staff",
     ],
   },
   {
     icon: "map",
-    title: "Immigration support",
+    title: "Immigration forms & paperwork",
+    note: "Jatinder is an immigration consultant, not a lawyer — she fills out forms and applications correctly and fast, and advises on the smoothest way to get them done. For legal disputes or refusals, she'll tell you to see a lawyer.",
     items: [
-      "Express Entry profile and documentation review",
-      "PNP stream selection for your occupation",
-      "Family sponsorship and super visa applications",
-      "PR card renewals and citizenship applications",
+      "Application forms — study, work, PR, sponsorship, super visa",
+      "Passport applications and renewals",
+      "Document checklists, paperwork review, and submissions",
+      "Practical guidance on the fastest way through the process",
     ],
   },
 ];
@@ -45,9 +53,9 @@ const WHEN: string[] = [
   "Your first Canadian return with Indian income, property, or NRE/NRO accounts",
   "You got a letter from the CRA and aren't sure what it means",
   "Your business crossed (or will cross) the $30,000 GST/HST threshold",
+  "The bookkeeping is piling up but you can't justify a full-time hire",
   "You're deciding whether to incorporate",
-  "Your CRS score is close to draw cut-offs and strategy matters",
-  "A refusal, a deadline, or anything where a mistake is expensive",
+  "An immigration or passport application is due and you don't want it bounced over a form error",
 ];
 
 export default function ExpertPage() {
@@ -73,6 +81,11 @@ export default function ExpertPage() {
                   </span>
                   <h2 className="font-semibold text-ink">{s.title}</h2>
                 </div>
+                {s.note && (
+                  <p className="mt-3 rounded-lg bg-cream-deep px-3.5 py-2.5 text-sm leading-relaxed text-ink-soft">
+                    {s.note}
+                  </p>
+                )}
                 <ul className="mt-4 space-y-2">
                   {s.items.map((item) => (
                     <li
@@ -98,7 +111,7 @@ export default function ExpertPage() {
             </h2>
             <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
               Our free tools handle the common cases. These are the moments
-              where hands-on help usually pays for itself:
+              where her hands-on help usually pays for itself:
             </p>
             <ul className="mt-4 space-y-2">
               {WHEN.map((w) => (

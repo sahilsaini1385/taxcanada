@@ -106,7 +106,7 @@ export default function PathwaysPage() {
         anything else.
       </Callout>
 
-      <ExpertCta context="Not sure which pathway fits your situation?" />
+      <ExpertCta context="Picked your path? The application paperwork doesn't have to eat your weekends." />
       <SourceNote
         reviewed="August 2025"
         sources={[

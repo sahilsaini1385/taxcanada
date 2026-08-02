@@ -71,7 +71,7 @@ const AUDIENCE: { icon: IconName; title: string; desc: string }[] = [
 const FAQ = [
   {
     q: "Is this really free? What's the catch?",
-    a: "The tools and guides are free — no paid tier, no ads, no data collection. Here's the honest business model: the site is run by the practice of Jatinder Saini, a tax, accounting and immigration professional. If you ever need hands-on help, that service is paid and always clearly labeled. The calculators never hold anything back to upsell you.",
+    a: "The tools and guides are free — no paid tier, no ads, no data collection. Here's the honest business model: the site is run by the practice of Jatinder Saini, a tax and accounting professional who also works as an immigration consultant for forms and paperwork. If you ever need hands-on help, that service is paid and always clearly labeled. The calculators never hold anything back to upsell you.",
   },
   {
     q: "Do I need an account?",
@@ -87,7 +87,7 @@ const FAQ = [
   },
   {
     q: "Can this replace an accountant or immigration consultant?",
-    a: "No, and we won't pretend otherwise. It will make you a far better-informed client — you'll know your rough numbers, your options, and the right questions to ask before paying anyone. And when you do want professional help, Jatinder Saini works with newcomers on exactly these situations, in English, Hindi, and Punjabi.",
+    a: "No, and we won't pretend otherwise. It will make you a far better-informed client — you'll know your rough numbers, your options, and the right questions to ask before paying anyone. When you do want hands-on help, Jatinder Saini handles taxes and accounting end to end, and takes immigration forms and paperwork off your plate — in English, Hindi, and Punjabi.",
   },
 ];
 
@@ -282,8 +282,9 @@ export default function HomePage() {
                 Some situations deserve more than a calculator.
               </h2>
               <p className="mt-3 max-w-2xl leading-relaxed text-ink-soft">
-                CRA letters, first-year returns with Indian income, GST/HST
-                registration, incorporation, Express Entry strategy —{" "}
+                First-year returns with Indian income, CRA letters, GST/HST,
+                bookkeeping for businesses too small for a full-time
+                accountant, and immigration forms done right the first time —{" "}
                 <strong className="text-ink">Jatinder Saini</strong> handles
                 these for Indian newcomers every day, in English, Hindi, and
                 Punjabi. Bring your numbers from our tools and the

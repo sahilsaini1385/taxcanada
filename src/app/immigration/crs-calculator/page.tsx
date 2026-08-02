@@ -37,7 +37,7 @@ export default function CrsPage() {
         .
       </Callout>
       <CrsCalculator />
-      <ExpertCta context="Score close to the cut-off and wondering what to do next?" />
+      <ExpertCta context="Ready to apply and want every form filled out right the first time?" />
       <SourceNote
         reviewed="August 2025"
         sources={[

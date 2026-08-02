@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Callout from "@/components/Callout";
+import Icon from "@/components/Icon";
 
 export const metadata: Metadata = {
   title: "Immigration guidance",
@@ -10,11 +11,12 @@ export const metadata: Metadata = {
 
 export default function ImmigrationHub() {
   return (
-    <div className="container-page py-12">
-      <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
+    <div className="container-page py-14">
+      <p className="eyebrow">Immigration</p>
+      <h1 className="display mt-3 text-3xl sm:text-4xl">
         Immigration, without the sales pitch
       </h1>
-      <p className="mt-3 max-w-2xl text-lg text-slate-600">
+      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
         Everything IRCC offers is free to look up — consultants charge for
         convenience, not secrets. Start by knowing your real score and your
         realistic options.
@@ -22,27 +24,27 @@ export default function ImmigrationHub() {
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         <Link
           href="/immigration/crs-calculator"
-          className="card transition hover:border-primary-300 hover:shadow-md"
+          className="card group transition hover:-translate-y-0.5 hover:shadow-lift"
         >
-          <span className="text-2xl">📊</span>
-          <h2 className="mt-3 font-semibold text-slate-900">
-            CRS score calculator
-          </h2>
-          <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
-            The full Express Entry points grid: age, education, language,
-            work experience, spouse factors, and skill transferability —
-            updated for the 2025 removal of job-offer points.
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-spruce-50 text-spruce-700">
+            <Icon name="gauge" size={24} />
+          </span>
+          <h2 className="mt-4 font-semibold text-ink">CRS score calculator</h2>
+          <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
+            The full Express Entry points grid in a guided, step-by-step flow —
+            age, education, language, work experience, spouse factors — updated
+            for the 2025 removal of job-offer points.
           </p>
         </Link>
         <Link
           href="/immigration/pathways"
-          className="card transition hover:border-primary-300 hover:shadow-md"
+          className="card group transition hover:-translate-y-0.5 hover:shadow-lift"
         >
-          <span className="text-2xl">🗺️</span>
-          <h2 className="mt-3 font-semibold text-slate-900">
-            Pathways compared
-          </h2>
-          <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-spruce-50 text-spruce-700">
+            <Icon name="map" size={24} />
+          </span>
+          <h2 className="mt-4 font-semibold text-ink">Pathways compared</h2>
+          <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
             Express Entry, Provincial Nominee Programs, the study route,
             family sponsorship, and citizenship — with honest trade-offs for
             applicants from India.
@@ -61,11 +63,11 @@ export default function ImmigrationHub() {
           >
             the CICC public register
           </a>
-          ) can legally charge to represent you. No one — no one — can
+          ) can legally charge to represent you. No one can
           &ldquo;guarantee&rdquo; a visa, buy you extra CRS points, or get you
           a &ldquo;backdoor&rdquo; LMIA. Paying for a job offer is illegal and
-          can get you banned for misrepresentation. If an agent in India or
-          Canada promises guarantees, walk away.
+          can get you banned for misrepresentation. If an agent promises
+          guarantees, walk away.
         </Callout>
       </div>
     </div>

@@ -12,12 +12,13 @@ export const metadata: Metadata = {
 export default function CrsPage() {
   return (
     <div className="container-page max-w-4xl py-12">
-      <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
+      <p className="eyebrow">Free tool</p>
+      <h1 className="display mt-3 text-3xl sm:text-4xl">
         Express Entry CRS calculator
       </h1>
-      <p className="mt-3 text-lg text-slate-600">
-        Your Comprehensive Ranking System score, using the same points grid
-        IRCC uses to rank Express Entry profiles.
+      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
+        A few quick steps, scored live with the same points grid IRCC uses to
+        rank Express Entry profiles.
       </p>
       <Callout variant="info" title="2025 rule change">
         IRCC <strong>removed job-offer (arranged employment) points</strong> in

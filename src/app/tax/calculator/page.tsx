@@ -12,12 +12,13 @@ export const metadata: Metadata = {
 export default function TaxCalculatorPage() {
   return (
     <div className="container-page max-w-4xl py-12">
-      <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
+      <p className="eyebrow">Free tool</p>
+      <h1 className="display mt-3 text-3xl sm:text-4xl">
         2025 income tax estimator
       </h1>
-      <p className="mt-3 text-lg text-slate-600">
-        See roughly what you&apos;ll owe (or take home) for the 2025 tax year
-        — the return you file by April 30, 2026.
+      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
+        Answer three things, watch the math happen. This is the return
+        you&apos;ll file by April 30, 2026 — no tax knowledge needed.
       </p>
       <Callout variant="info" title="What this is — and isn't">
         A good-faith estimate using official 2025 brackets, the basic personal

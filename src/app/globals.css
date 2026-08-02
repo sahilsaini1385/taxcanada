@@ -7,42 +7,65 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-white text-slate-800 antialiased;
+    @apply bg-cream text-ink antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  ::selection {
+    @apply bg-saffron-200 text-ink;
+  }
+  /* Hide number-input spinners; we format currency ourselves */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
   }
 }
 
 @layer components {
   .container-page {
-    @apply mx-auto w-full max-w-5xl px-4 sm:px-6;
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+  .display {
+    @apply font-display font-semibold tracking-tight text-ink;
   }
   .card {
-    @apply rounded-xl border border-slate-200 bg-white p-6 shadow-sm;
+    @apply rounded-2xl border border-line bg-white p-6 shadow-card;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary-700 px-5 py-2.5 font-medium text-white transition hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-spruce-800 px-6 py-3 font-medium text-white transition hover:bg-spruce-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spruce-500 focus-visible:ring-offset-2;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-2.5 font-medium text-slate-700 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white px-6 py-3 font-medium text-ink transition hover:border-ink/30 hover:bg-cream-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spruce-500 focus-visible:ring-offset-2;
   }
   .input-field {
-    @apply w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-800 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500;
+    @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-ink placeholder:text-ink-muted focus:border-spruce-500 focus:outline-none focus:ring-1 focus:ring-spruce-500;
   }
   .label-field {
-    @apply mb-1 block text-sm font-medium text-slate-700;
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
+  .eyebrow {
+    @apply text-[13px] font-semibold uppercase tracking-[0.12em] text-saffron-600;
   }
   .prose-section h2 {
-    @apply mt-10 text-2xl font-bold text-slate-900;
+    @apply display mt-12 text-2xl sm:text-[1.75rem];
   }
   .prose-section h3 {
-    @apply mt-6 text-lg font-semibold text-slate-900;
+    @apply mt-6 text-lg font-semibold text-ink;
   }
   .prose-section p {
-    @apply mt-3 leading-relaxed text-slate-700;
+    @apply mt-3 leading-relaxed text-ink-soft;
   }
   .prose-section ul {
-    @apply mt-3 list-disc space-y-2 pl-6 text-slate-700;
+    @apply mt-3 list-disc space-y-2 pl-6 leading-relaxed text-ink-soft;
   }
   .prose-section a {
-    @apply text-primary-700 underline decoration-primary-300 underline-offset-2 hover:decoration-primary-600;
+    @apply font-medium text-spruce-700 underline decoration-spruce-300 underline-offset-2 hover:decoration-spruce-600;
+  }
+  .prose-section strong {
+    @apply text-ink;
   }
 }

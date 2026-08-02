@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="container-page prose-section max-w-3xl py-12">
-      <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
+      <p className="eyebrow">Trust</p>
+      <h1 className="display mt-3 text-3xl sm:text-4xl">
         Privacy — the short, honest version
       </h1>
       <p>

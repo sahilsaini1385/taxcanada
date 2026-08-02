@@ -12,10 +12,11 @@ export const metadata: Metadata = {
 export default function SmallBusinessPage() {
   return (
     <div className="container-page prose-section max-w-3xl py-12">
-      <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
+      <p className="eyebrow">Guide</p>
+      <h1 className="display mt-3 text-3xl sm:text-4xl">
         Small business & self-employment taxes
       </h1>
-      <p className="mt-3 text-lg text-slate-600">
+      <p className="mt-4 text-lg leading-relaxed text-ink-soft">
         Driving Uber, running an IT consultancy, a franchise, a trucking
         company, or a corner store — the tax rules are the same, and they
         reward people who keep records.

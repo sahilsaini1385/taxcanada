@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Icon, { type IconName } from "@/components/Icon";
 
 export const metadata: Metadata = {
   title: "Canadian taxes for newcomers",
@@ -7,22 +8,22 @@ export const metadata: Metadata = {
     "Tax calculator and guides for Indian immigrants in Canada: first-year filing, world income, and small business taxes.",
 };
 
-const ITEMS = [
+const ITEMS: { href: string; icon: IconName; title: string; desc: string }[] = [
   {
     href: "/tax/calculator",
-    emoji: "🧮",
+    icon: "calculator",
     title: "2025 income tax calculator",
-    desc: "Federal + provincial tax, CPP and EI on employment or self-employment income. Supports Ontario, BC, and Alberta, with RRSP deductions.",
+    desc: "Federal + provincial tax, CPP and EI on employment or self-employment income — Ontario, BC, and Alberta, with RRSP deductions.",
   },
   {
     href: "/tax/newcomer-guide",
-    emoji: "🛬",
+    icon: "landing",
     title: "Your first tax return in Canada",
     desc: "Tax residency, reporting Indian income, the India–Canada treaty, NRE/NRO interest, T1135, and benefits you can claim from day one.",
   },
   {
     href: "/tax/small-business",
-    emoji: "🏪",
+    icon: "store",
     title: "Small business & self-employment",
     desc: "Sole proprietor vs corporation, the $30,000 GST/HST rule, deductible expenses, and paying yourself salary vs dividends.",
   },
@@ -30,11 +31,12 @@ const ITEMS = [
 
 export default function TaxHub() {
   return (
-    <div className="container-page py-12">
-      <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
+    <div className="container-page py-14">
+      <p className="eyebrow">Taxes</p>
+      <h1 className="display mt-3 text-3xl sm:text-4xl">
         Canadian taxes, without the jargon
       </h1>
-      <p className="mt-3 max-w-2xl text-lg text-slate-600">
+      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
         Whether it&apos;s your first return or your first business, start
         here. Everything is written for people who learned &ldquo;income
         tax&rdquo; in the Indian system first.
@@ -44,22 +46,27 @@ export default function TaxHub() {
           <Link
             key={i.href}
             href={i.href}
-            className="card transition hover:border-primary-300 hover:shadow-md"
+            className="card group transition hover:-translate-y-0.5 hover:shadow-lift"
           >
-            <span className="text-2xl">{i.emoji}</span>
-            <h2 className="mt-3 font-semibold text-slate-900">{i.title}</h2>
-            <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-spruce-50 text-spruce-700">
+              <Icon name={i.icon} size={24} />
+            </span>
+            <h2 className="mt-4 font-semibold text-ink">{i.title}</h2>
+            <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
               {i.desc}
             </p>
           </Link>
         ))}
       </div>
-      <div className="mt-10 rounded-lg border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-600">
-        <strong className="text-slate-800">Key dates:</strong> the 2025 tax
-        year is filed by <strong>April 30, 2026</strong> (June 15, 2026 if
-        you&apos;re self-employed, but any balance is still due April 30).
-        Filing late when you owe money means penalties — file even if you
-        can&apos;t pay right away.
+      <div className="mt-10 flex max-w-3xl gap-3 rounded-xl border border-line bg-white p-5 text-sm leading-relaxed text-ink-soft">
+        <Icon name="file" size={20} className="mt-0.5 shrink-0 text-spruce-600" />
+        <p>
+          <strong className="text-ink">Key dates:</strong> the 2025 tax year
+          is filed by <strong className="text-ink">April 30, 2026</strong>{" "}
+          (June 15 if you&apos;re self-employed, but any balance is still due
+          April 30). Filing late when you owe means penalties — file even if
+          you can&apos;t pay right away.
+        </p>
       </div>
     </div>
   );

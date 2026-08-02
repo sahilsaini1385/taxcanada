@@ -30,12 +30,12 @@ export default function AuthButton() {
             className="rounded-full"
           />
         ) : null}
-        <span className="hidden text-sm text-slate-600 sm:inline">
+        <span className="hidden text-sm text-ink-soft sm:inline">
           {session.user.name?.split(" ")[0]}
         </span>
         <button
           onClick={() => signOut()}
-          className="text-sm font-medium text-slate-500 hover:text-slate-700"
+          className="text-sm font-medium text-ink-muted hover:text-ink"
         >
           Sign out
         </button>
@@ -46,7 +46,7 @@ export default function AuthButton() {
   return (
     <button
       onClick={() => signIn("google")}
-      className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3.5 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+      className="inline-flex items-center gap-2 rounded-lg border border-line bg-white px-3.5 py-1.5 text-sm font-medium text-ink transition hover:bg-cream-deep"
     >
       <svg width="16" height="16" viewBox="0 0 48 48" aria-hidden="true">
         <path

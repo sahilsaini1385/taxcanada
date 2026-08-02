@@ -48,7 +48,7 @@
     @apply mb-1.5 block text-sm font-medium text-ink;
   }
   .eyebrow {
-    @apply text-[13px] font-semibold uppercase tracking-[0.12em] text-saffron-600;
+    @apply text-[13px] font-semibold uppercase tracking-[0.12em] text-saffron-800;
   }
   .prose-section h2 {
     @apply display mt-12 text-2xl sm:text-[1.75rem];

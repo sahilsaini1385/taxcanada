@@ -94,7 +94,7 @@ export default function CrsCalculator() {
   const steps = useMemo(() => {
     const s = ["About you", "Language", "Work"];
     if (input.hasSpouse) s.push("Your spouse");
-    s.push("Extra points");
+    s.push("Extras");
     return s;
   }, [input.hasSpouse]);
 
@@ -103,35 +103,50 @@ export default function CrsCalculator() {
   const gap = DRAW_REFERENCE - result.total;
 
   return (
-    <div className="mt-8 grid gap-6 lg:grid-cols-[1fr,360px]">
-      <div>
-        {/* Stepper */}
-        <ol className="mb-5 flex flex-wrap items-center gap-x-1 gap-y-2">
+    <div className="mt-8">
+      {/* Page-level progress: spans both columns */}
+      <div className="mb-5">
+        <p className="mb-2 text-xs tabular-nums text-ink-muted">
+          Step {step + 1} of {steps.length}
+        </p>
+        <ol className="-mx-4 flex flex-nowrap items-center gap-x-1.5 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:px-0">
           {steps.map((s, i) => {
-            const stateCls =
-              i === step
-                ? "bg-spruce-800 text-white"
-                : i < step
-                  ? "bg-spruce-100 text-spruce-800"
-                  : "bg-cream-deep text-ink-muted";
+            const isActive = i === step;
+            const isDone = i < step;
+            const stateCls = isActive
+              ? "bg-spruce-800 font-semibold text-white"
+              : isDone
+                ? "bg-spruce-100 text-spruce-900"
+                : "border border-ink/15 bg-transparent text-ink/45";
             return (
-              <li key={s} className="flex items-center gap-1">
+              <li key={s} className="flex shrink-0 items-center gap-1.5">
                 <button
                   type="button"
                   onClick={() => setStep(i)}
-                  className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition ${stateCls}`}
+                  aria-current={isActive ? "step" : undefined}
+                  className={`flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 text-xs transition ${stateCls}`}
                 >
-                  {i < step && <Icon name="check" size={12} />}
+                  {isDone ? (
+                    <Icon name="check" size={12} />
+                  ) : (
+                    <span className="tabular-nums">{i + 1}.</span>
+                  )}
                   {s}
                 </button>
                 {i < steps.length - 1 && (
-                  <span className="h-px w-3 bg-line" aria-hidden="true" />
+                  <span
+                    className={`h-px w-5 shrink-0 ${isDone ? "bg-spruce-400" : "bg-ink/15"}`}
+                    aria-hidden="true"
+                  />
                 )}
               </li>
             );
           })}
         </ol>
+      </div>
 
+      <div className="grid gap-6 lg:grid-cols-[1fr,360px]">
+      <div>
         <div className="card space-y-5">
           {stepName === "About you" && (
             <>
@@ -270,7 +285,7 @@ export default function CrsCalculator() {
             </>
           )}
 
-          {stepName === "Extra points" && (
+          {stepName === "Extras" && (
             <>
               <h2 className="display text-xl">Almost there — bonus points</h2>
               <YesNoControl
@@ -341,20 +356,29 @@ export default function CrsCalculator() {
       <div className="lg:sticky lg:top-20 lg:self-start">
         <div className="card">
           <p className="text-sm text-ink-soft">Your CRS score so far</p>
-          <p className="display mt-1 text-6xl tabular-nums">{result.total}</p>
+          <p className="display mt-1 text-5xl tabular-nums text-spruce-700">
+            {result.total}
+          </p>
           <p className="mt-1 text-sm text-ink-muted">out of 1,200</p>
 
-          <div className="mt-5">
-            <div className="relative h-3 overflow-hidden rounded-full bg-cream-deep">
+          <div className="mt-8">
+            <div className="relative h-3 rounded-full bg-cream-deep">
               <div
-                className="h-full rounded-full bg-spruce-600 transition-all"
+                className="h-full max-w-full rounded-full bg-spruce-600 transition-all"
                 style={{ width: `${Math.min(100, (result.total / 1200) * 100)}%` }}
               />
               <div
-                className="absolute top-0 h-full w-0.5 bg-ink/50"
+                className="absolute -top-1.5 h-6 w-0.5 bg-ink/50"
                 style={{ left: `${(DRAW_REFERENCE / 1200) * 100}%` }}
                 aria-hidden="true"
               />
+              <span
+                className="absolute -top-6 -translate-x-1/2 whitespace-nowrap text-[11px] text-ink-soft"
+                style={{ left: `${(DRAW_REFERENCE / 1200) * 100}%` }}
+                aria-hidden="true"
+              >
+                draws ~{DRAW_REFERENCE}
+              </span>
             </div>
             <p className="mt-2 text-xs leading-relaxed text-ink-muted">
               {gap > 0 ? (
@@ -385,7 +409,7 @@ export default function CrsCalculator() {
             </p>
           </div>
 
-          <dl className="mt-5 space-y-2 border-t border-line-soft pt-4 text-sm">
+          <dl className="mt-5 divide-y divide-line-soft border-t border-line-soft pt-2 text-sm">
             {[
               ["Age", result.age],
               ["Education", result.education],
@@ -395,18 +419,33 @@ export default function CrsCalculator() {
               ["Spouse factors", result.spouseFactors],
               ["Skill transferability", result.transferability],
               ["Additional points", result.additional],
-            ].map(([label, value]) => (
-              <div key={label as string} className="flex justify-between">
-                <dt className="text-ink-soft">{label}</dt>
-                <dd className="font-medium tabular-nums text-ink">{value}</dd>
-              </div>
-            ))}
+            ].map(([label, value]) => {
+              const zero = Number(value) === 0;
+              return (
+                <div
+                  key={label as string}
+                  className="flex justify-between py-1.5"
+                >
+                  <dt className={zero ? "text-ink/35" : "text-ink-soft"}>
+                    {label}
+                  </dt>
+                  <dd
+                    className={`tabular-nums ${
+                      zero ? "text-ink/35" : "font-medium text-ink"
+                    }`}
+                  >
+                    {zero ? "—" : value}
+                  </dd>
+                </div>
+              );
+            })}
           </dl>
         </div>
       </div>
+      </div>
 
       {/* Mobile: live score visible while answering */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-white/95 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur lg:hidden">
         <div className="mx-auto flex max-w-md items-baseline justify-between">
           <span className="text-sm text-ink-soft">CRS score</span>
           <span className="font-display text-2xl font-semibold tabular-nums text-ink">
@@ -415,7 +454,7 @@ export default function CrsCalculator() {
           </span>
         </div>
       </div>
-      <div className="h-14 lg:hidden" />
+      <div className="h-24 lg:hidden" />
     </div>
   );
 }

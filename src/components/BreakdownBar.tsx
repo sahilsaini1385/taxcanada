@@ -23,7 +23,7 @@ export default function BreakdownBar({
   return (
     <div>
       <div
-        className="flex h-4 gap-[2px] overflow-hidden rounded-full"
+        className="flex h-4 gap-[2px] overflow-hidden rounded-lg"
         role="img"
         aria-label={visible
           .map((s) => `${s.label}: ${formatValue(s.value)}`)
@@ -32,7 +32,7 @@ export default function BreakdownBar({
         {visible.map((s) => (
           <div
             key={s.label}
-            className={`${s.colorClass} min-w-[3px] rounded-[3px]`}
+            className={`${s.colorClass} min-w-[6px] rounded-[3px]`}
             style={{ width: `${(s.value / total) * 100}%` }}
           />
         ))}

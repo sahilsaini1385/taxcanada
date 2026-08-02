@@ -15,7 +15,7 @@ import Icon from "@/components/Icon";
 function WhyWeAsk({ children }: { children: React.ReactNode }) {
   return (
     <details className="group mt-1.5">
-      <summary className="flex cursor-pointer list-none items-center gap-1 text-xs font-medium text-spruce-700 [&::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer list-none items-center gap-1 text-xs text-ink-muted underline decoration-line underline-offset-2 hover:text-spruce-700 [&::-webkit-details-marker]:hidden">
         Why we ask
         <Icon name="chevronDown" size={13} className="transition group-open:rotate-180" />
       </summary>
@@ -167,7 +167,7 @@ export default function TaxCalculator() {
       </div>
 
       {/* Mobile: live result stays visible while typing */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-white/95 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur lg:hidden">
         <div className="mx-auto flex max-w-md items-baseline justify-between">
           <span className="text-sm text-ink-soft">Take-home</span>
           <span className="font-display text-2xl font-semibold tabular-nums text-spruce-700">
@@ -175,7 +175,7 @@ export default function TaxCalculator() {
           </span>
         </div>
       </div>
-      <div className="h-14 lg:hidden" />
+      <div className="h-24 lg:hidden" />
     </>
   );
 }

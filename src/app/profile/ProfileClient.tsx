@@ -26,6 +26,8 @@ const SAMPLE_ITEMS = [
   "Get your Social Insurance Number (SIN)",
   "Understand your first tax return",
   "Apply for GST/HST credit and benefits",
+  "Check your Express Entry CRS score",
+  "Estimate your 2025 taxes",
 ];
 
 export default function ProfileClient() {
@@ -60,10 +62,17 @@ export default function ProfileClient() {
         Five quick questions, one personal to-do list — the tax and
         immigration steps that match your situation, nothing more.
       </p>
-      <p className="mt-4 flex items-center gap-2 text-sm text-ink-soft">
-        <Icon name="lock" size={16} className="text-spruce-600" />
+      <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+        <Icon
+          name="lock"
+          size={16}
+          className="mr-1.5 inline-block align-[-3px] text-spruce-600"
+        />
         Saved only in this browser — never uploaded, signed in or not.{" "}
-        <Link href="/privacy" className="font-medium text-spruce-700 underline decoration-spruce-300 underline-offset-2">
+        <Link
+          href="/privacy"
+          className="whitespace-nowrap font-medium text-spruce-700 underline decoration-spruce-300 underline-offset-2"
+        >
           How privacy works
         </Link>
       </p>
@@ -147,19 +156,19 @@ export default function ProfileClient() {
           {!started ? (
             <div className="relative">
               {/* Skeleton preview so the payoff is visible before answering */}
-              <ul className="space-y-3 opacity-50 blur-[1.5px]" aria-hidden="true">
+              <ul className="space-y-3 opacity-60" aria-hidden="true">
                 {SAMPLE_ITEMS.map((t) => (
                   <li key={t} className="card flex items-start gap-3 py-4">
                     <span className="mt-1 h-5 w-5 shrink-0 rounded border border-line" />
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1">
                       <p className="font-medium text-ink">{t}</p>
-                      <p className="mt-1.5 h-3 w-2/3 rounded bg-cream-deep" />
+                      <p className="mt-2 h-3 w-2/3 rounded bg-cream-deep" />
                     </div>
                   </li>
                 ))}
               </ul>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="rounded-full border border-line bg-white px-5 py-2.5 text-sm font-medium text-ink shadow-card">
+              <div className="absolute inset-0 flex items-center justify-center rounded-2xl bg-cream/60 backdrop-blur-[2px]">
+                <p className="rounded-full border border-line bg-white px-5 py-2.5 text-center text-sm font-medium text-ink shadow-lift">
                   Answer the questions to unlock your list →
                 </p>
               </div>

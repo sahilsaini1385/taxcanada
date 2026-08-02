@@ -16,13 +16,15 @@ export type Education =
   | "masters"
   | "doctoral";
 
+// Labels front-load the distinguisher so native <select>s (which
+// hard-clip long options on mobile) stay readable.
 export const EDUCATION_LABELS: Record<Education, string> = {
-  lessThanSecondary: "Less than secondary school",
+  lessThanSecondary: "Below secondary school",
   secondary: "Secondary school (high school)",
-  oneYear: "One-year post-secondary program",
-  twoYear: "Two-year post-secondary program",
-  bachelors: "Bachelor's degree (3+ year program)",
-  twoOrMore: "Two or more credentials (one 3+ years)",
+  oneYear: "1-year post-secondary program",
+  twoYear: "2-year post-secondary program",
+  bachelors: "Bachelor's degree (3+ yrs)",
+  twoOrMore: "Two or more credentials",
   masters: "Master's or professional degree",
   doctoral: "Doctoral degree (PhD)",
 };

@@ -31,7 +31,7 @@ export default function Callout({
 }) {
   const s = STYLES[variant];
   return (
-    <div className={`my-5 flex gap-3 rounded-xl border p-4 text-sm leading-relaxed ${s.box}`}>
+    <div className={`my-5 flex gap-3 rounded-xl border p-4 text-[15px] leading-relaxed ${s.box}`}>
       <Icon name={s.icon} size={20} className={`mt-0.5 shrink-0 ${s.iconColor}`} />
       <div className="min-w-0">
         {title && <p className="mb-1 font-semibold">{title}</p>}

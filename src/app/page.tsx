@@ -107,11 +107,11 @@ function HeroPreview() {
         <p className="text-sm text-ink-soft">Take-home on $75,000 in Ontario</p>
         <p className="display mt-1 text-5xl tabular-nums">$56,671</p>
         <p className="mt-1 text-sm text-ink-muted">≈ $4,723 per month</p>
-        <div className="mt-5 flex h-3.5 gap-[2px] overflow-hidden rounded-full">
+        <div className="mt-5 flex h-3.5 gap-[2px] overflow-hidden rounded-lg">
           {segments.map((s) => (
             <div
               key={s.label}
-              className={`${s.color} rounded-[3px]`}
+              className={`${s.color} min-w-[5px] rounded-[3px]`}
               style={{ width: `${s.pct}%` }}
             />
           ))}
@@ -147,7 +147,7 @@ export default function HomePage() {
         <div className="container-page grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.1fr,1fr] lg:py-24">
           <div>
             <p className="eyebrow">For Indian newcomers to Canada</p>
-            <h1 className="display mt-4 max-w-2xl text-4xl leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
+            <h1 className="display mt-4 max-w-2xl text-4xl leading-[1.08] [text-wrap:balance] sm:text-5xl lg:text-[3.4rem]">
               Your first tax season, sorted. Your path to PR, mapped.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-soft">
@@ -164,7 +164,7 @@ export default function HomePage() {
                 Check my CRS score
               </Link>
             </div>
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-soft">
+            <ul className="mt-8 flex flex-col gap-2 text-sm text-ink-soft">
               {[
                 "100% free, no account",
                 "Nothing leaves your device",
@@ -275,9 +275,7 @@ export default function HomePage() {
 
       <section className="border-t border-line bg-white">
         <div className="container-page max-w-3xl py-16 sm:py-20">
-          <h2 className="display text-center text-3xl sm:text-4xl">
-            Fair questions
-          </h2>
+          <h2 className="display text-3xl sm:text-4xl">Fair questions</h2>
           <div className="mt-8 divide-y divide-line rounded-2xl border border-line bg-white shadow-card">
             {FAQ.map((f) => (
               <details key={f.q} className="group px-6 py-5">
@@ -300,7 +298,7 @@ export default function HomePage() {
 
       <section className="bg-spruce-900">
         <div className="container-page flex flex-col items-center py-16 text-center sm:py-20">
-          <h2 className="display max-w-2xl text-3xl text-white sm:text-4xl">
+          <h2 className="display max-w-2xl text-3xl text-white [text-wrap:balance] sm:text-4xl">
             Five minutes now beats a surprise in April.
           </h2>
           <p className="mt-4 max-w-xl text-spruce-100">

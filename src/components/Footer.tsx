@@ -23,30 +23,30 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold text-ink">Tax tools</p>
             <ul className="mt-3 space-y-2 text-sm text-ink-soft">
-              <li><Link className="hover:text-spruce-700" href="/tax/calculator">2025 tax calculator</Link></li>
-              <li><Link className="hover:text-spruce-700" href="/tax/newcomer-guide">First-year tax guide</Link></li>
-              <li><Link className="hover:text-spruce-700" href="/tax/small-business">Small business taxes</Link></li>
+              <li><Link className="inline-block py-1 hover:text-spruce-700" href="/tax/calculator">2025 tax calculator</Link></li>
+              <li><Link className="inline-block py-1 hover:text-spruce-700" href="/tax/newcomer-guide">First-year tax guide</Link></li>
+              <li><Link className="inline-block py-1 hover:text-spruce-700" href="/tax/small-business">Small business taxes</Link></li>
             </ul>
           </div>
           <div>
             <p className="text-sm font-semibold text-ink">Immigration</p>
             <ul className="mt-3 space-y-2 text-sm text-ink-soft">
-              <li><Link className="hover:text-spruce-700" href="/immigration/crs-calculator">CRS score calculator</Link></li>
-              <li><Link className="hover:text-spruce-700" href="/immigration/pathways">Pathways compared</Link></li>
-              <li><Link className="hover:text-spruce-700" href="/profile">Personal checklist</Link></li>
+              <li><Link className="inline-block py-1 hover:text-spruce-700" href="/immigration/crs-calculator">CRS score calculator</Link></li>
+              <li><Link className="inline-block py-1 hover:text-spruce-700" href="/immigration/pathways">Pathways compared</Link></li>
+              <li><Link className="inline-block py-1 hover:text-spruce-700" href="/profile">Personal checklist</Link></li>
             </ul>
           </div>
           <div>
             <p className="text-sm font-semibold text-ink">Trust</p>
             <ul className="mt-3 space-y-2 text-sm text-ink-soft">
-              <li><Link className="hover:text-spruce-700" href="/privacy">Privacy — nothing leaves your device</Link></li>
+              <li><Link className="inline-block py-1 hover:text-spruce-700" href="/privacy">Privacy — nothing leaves your device</Link></li>
               <li>
-                <a className="hover:text-spruce-700" href="https://www.canada.ca/en/revenue-agency.html" target="_blank" rel="noopener noreferrer">
+                <a className="inline-block py-1 hover:text-spruce-700" href="https://www.canada.ca/en/revenue-agency.html" target="_blank" rel="noopener noreferrer">
                   Canada Revenue Agency ↗
                 </a>
               </li>
               <li>
-                <a className="hover:text-spruce-700" href="https://www.canada.ca/en/immigration-refugees-citizenship.html" target="_blank" rel="noopener noreferrer">
+                <a className="inline-block py-1 hover:text-spruce-700" href="https://www.canada.ca/en/immigration-refugees-citizenship.html" target="_blank" rel="noopener noreferrer">
                   Immigration Canada (IRCC) ↗
                 </a>
               </li>

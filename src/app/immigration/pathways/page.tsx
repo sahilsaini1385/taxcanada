@@ -76,15 +76,13 @@ export default function PathwaysPage() {
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-spruce-50 text-spruce-700">
                 {p.icon === "leaf" ? <LeafMark size={22} /> : <Icon name={p.icon} size={24} />}
               </span>
-              <div className="min-w-0">
-                <h2 className="text-lg font-semibold text-ink">
-                  {p.title}
-                </h2>
-                <div className="mt-1 flex flex-wrap gap-x-6 gap-y-1 text-sm">
-                  <span className="text-ink-muted">
+              <div className="min-w-0 max-w-[65ch]">
+                <h2 className="display text-xl">{p.title}</h2>
+                <div className="mt-1.5 flex flex-wrap gap-x-6 gap-y-1 text-sm">
+                  <span className="text-ink-soft">
                     <strong className="text-ink">Best for:</strong> {p.fit}
                   </span>
-                  <span className="text-ink-muted">
+                  <span className="text-ink-soft">
                     <strong className="text-ink">Typical timeline:</strong>{" "}
                     {p.time}
                   </span>

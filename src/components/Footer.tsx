@@ -12,7 +12,7 @@ export default function Footer() {
                 <LeafMark size={19} />
               </span>
               <span className="font-display text-lg font-semibold text-ink">
-                MapleRoots
+                ApnaCanada
               </span>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
@@ -34,6 +34,7 @@ export default function Footer() {
               <li><Link className="inline-block py-1 hover:text-spruce-700" href="/immigration/crs-calculator">CRS score calculator</Link></li>
               <li><Link className="inline-block py-1 hover:text-spruce-700" href="/immigration/pathways">Pathways compared</Link></li>
               <li><Link className="inline-block py-1 hover:text-spruce-700" href="/profile">Personal checklist</Link></li>
+              <li><Link className="inline-block py-1 hover:text-spruce-700" href="/expert">Talk to an expert</Link></li>
             </ul>
           </div>
           <div>
@@ -56,13 +57,15 @@ export default function Footer() {
         <div className="mt-10 border-t border-line-soft pt-6 text-xs leading-relaxed text-ink-muted">
           <p>
             <strong className="text-ink-soft">
-              MapleRoots is educational, not professional advice.
+              ApnaCanada&apos;s free tools and guides are educational, not
+              professional advice.
             </strong>{" "}
-            We are not accountants, lawyers, or licensed immigration
-            consultants (RCICs). Rules change often and depend on your
-            situation — confirm important decisions with the CRA, IRCC, a CPA,
-            or a licensed consultant. Figures reflect the 2025 tax year and
-            IRCC rules as of mid-2025 unless noted.
+            Rules change often and depend on your situation — confirm
+            important decisions with the CRA, IRCC, or a qualified
+            professional. Professional services offered through this site by
+            Jatinder Saini are separate from the free tools and always clearly
+            labeled. Figures reflect the 2025 tax year and IRCC rules as of
+            mid-2025 unless noted.
           </p>
         </div>
       </div>

@@ -42,8 +42,9 @@ export default function SourceNote({
           ))}
         </ul>
         <p className="mt-3 text-xs leading-relaxed text-ink-muted">
-          MapleRoots is educational, not professional advice. Confirm important
-          decisions with the CRA, IRCC, a CPA, or a licensed consultant.
+          ApnaCanada&apos;s free tools are educational, not professional
+          advice. Confirm important decisions with the CRA, IRCC, or a
+          qualified professional.
         </p>
       </div>
     </details>

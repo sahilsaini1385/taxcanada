@@ -1,6 +1,8 @@
-# 🍁 MapleRoots
+# 🍁 ApnaCanada
 
-**Free, plain-language tax and immigration guidance for Indian immigrants in Canada.**
+**Free, plain-language tax and immigration guidance for Indian immigrants in Canada** — and the lead-generation site for the professional practice of Jatinder Saini.
+
+("Apna" — "our own" in Hindi and Punjabi. Indian roots, Canadian address.)
 
 A Next.js web app (works great on mobile) with:
 
@@ -52,6 +54,20 @@ Netlify and Cloudflare Pages also work; Vercel is the least-friction option for 
 - [Tailwind CSS 3](https://tailwindcss.com)
 - [NextAuth 4](https://next-auth.js.org) with Google provider (JWT sessions, no database)
 
+## Branding & the featured professional
+
+Everything brand- and lead-gen-related lives in **`src/lib/site.ts`**:
+
+- `SITE_NAME` — rename the whole site in one line
+- `EXPERT` — Jatinder Saini's title, blurb, and contact details. Fill in
+  `phone`, `email`, and/or `bookingUrl` to activate the contact buttons on
+  `/expert`; while they're empty the page shows "bookings opening soon."
+  Adjust the title to match actual licensing before launch (CPA for public
+  accounting; RCIC/lawyer for paid immigration representation).
+
+Lead-gen surfaces: the `/expert` page, a homepage section, a nav link, and
+contextual `ExpertCta` cards at the bottom of every tool and guide.
+
 ## Keeping figures current
 
 Tax brackets and CRS rules change every year. All figures live in two files:
@@ -63,4 +79,4 @@ Each page shows a "last reviewed" date via the `SourceNote` component — update
 
 ## Disclaimer
 
-MapleRoots is an educational tool, not professional advice. It is not a substitute for a CPA, tax lawyer, or licensed immigration consultant (RCIC). Verify important decisions with the CRA, IRCC, or a licensed professional.
+ApnaCanada is an educational tool, not professional advice. It is not a substitute for a CPA, tax lawyer, or licensed immigration consultant (RCIC). Verify important decisions with the CRA, IRCC, or a licensed professional.

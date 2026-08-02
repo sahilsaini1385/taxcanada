@@ -71,7 +71,7 @@ const AUDIENCE: { icon: IconName; title: string; desc: string }[] = [
 const FAQ = [
   {
     q: "Is this really free? What's the catch?",
-    a: "Yes — free, with no paid tier, no ads, and no data collection to monetize. It's an open-source educational project. The honest catch: it's education, not professional advice, so for complex situations we'll point you to a CPA or licensed consultant rather than pretend.",
+    a: "The tools and guides are free — no paid tier, no ads, no data collection. Here's the honest business model: the site is run by the practice of Jatinder Saini, a tax, accounting and immigration professional. If you ever need hands-on help, that service is paid and always clearly labeled. The calculators never hold anything back to upsell you.",
   },
   {
     q: "Do I need an account?",
@@ -87,7 +87,7 @@ const FAQ = [
   },
   {
     q: "Can this replace an accountant or immigration consultant?",
-    a: "No, and we won't pretend otherwise. It will make you a far better-informed client — you'll know your rough numbers, your options, and the right questions to ask before paying anyone.",
+    a: "No, and we won't pretend otherwise. It will make you a far better-informed client — you'll know your rough numbers, your options, and the right questions to ask before paying anyone. And when you do want professional help, Jatinder Saini works with newcomers on exactly these situations, in English, Hindi, and Punjabi.",
   },
 ];
 
@@ -220,7 +220,7 @@ export default function HomePage() {
               </h2>
               <p className="mt-4 max-w-md leading-relaxed text-ink-soft">
                 Most tax and immigration content assumes you were born here.
-                MapleRoots starts from the other side of the journey — money,
+                ApnaCanada starts from the other side of the journey — money,
                 family, and paperwork that stretch between India and Canada.
               </p>
             </div>
@@ -274,7 +274,32 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-line bg-white">
-        <div className="container-page max-w-3xl py-16 sm:py-20">
+        <div className="container-page py-16 sm:py-20">
+          <div className="grid items-center gap-10 rounded-2xl border border-spruce-200 bg-spruce-50 p-8 sm:p-10 lg:grid-cols-[1fr,auto]">
+            <div>
+              <p className="eyebrow">Need a professional?</p>
+              <h2 className="display mt-3 text-2xl [text-wrap:balance] sm:text-3xl">
+                Some situations deserve more than a calculator.
+              </h2>
+              <p className="mt-3 max-w-2xl leading-relaxed text-ink-soft">
+                CRA letters, first-year returns with Indian income, GST/HST
+                registration, incorporation, Express Entry strategy —{" "}
+                <strong className="text-ink">Jatinder Saini</strong> handles
+                these for Indian newcomers every day, in English, Hindi, and
+                Punjabi. Bring your numbers from our tools and the
+                conversation starts halfway done.
+              </p>
+            </div>
+            <Link href="/expert" className="btn-primary justify-self-start lg:justify-self-end">
+              Meet Jatinder
+              <Icon name="arrowRight" size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="container-page max-w-3xl pb-16 sm:pb-20">
           <h2 className="display text-3xl sm:text-4xl">Fair questions</h2>
           <div className="mt-8 divide-y divide-line rounded-2xl border border-line bg-white shadow-card">
             {FAQ.map((f) => (

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CrsCalculator from "./CrsCalculator";
 import SourceNote from "@/components/SourceNote";
+import ExpertCta from "@/components/ExpertCta";
 import Callout from "@/components/Callout";
 
 export const metadata: Metadata = {
@@ -36,6 +37,7 @@ export default function CrsPage() {
         .
       </Callout>
       <CrsCalculator />
+      <ExpertCta context="Score close to the cut-off and wondering what to do next?" />
       <SourceNote
         reviewed="August 2025"
         sources={[

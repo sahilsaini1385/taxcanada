@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Callout from "@/components/Callout";
 import SourceNote from "@/components/SourceNote";
+import ExpertCta from "@/components/ExpertCta";
 
 export const metadata: Metadata = {
   title: "Small business taxes for newcomers",
@@ -121,6 +122,7 @@ export default function SmallBusinessPage() {
         self-employment income to include both CPP shares.
       </p>
 
+      <ExpertCta context="Registering for GST/HST, incorporating, or behind on bookkeeping?" />
       <SourceNote
         reviewed="August 2025"
         sources={[

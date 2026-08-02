@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy",
   description:
-    "How MapleRoots handles your data: everything stays in your browser.",
+    "How ApnaCanada handles your data: everything stays in your browser.",
 };
 
 export default function PrivacyPage() {

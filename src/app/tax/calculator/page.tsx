@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import TaxCalculator from "./TaxCalculator";
 import SourceNote from "@/components/SourceNote";
+import ExpertCta from "@/components/ExpertCta";
 import Callout from "@/components/Callout";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function TaxCalculatorPage() {
         filing number. Your inputs never leave this page.
       </Callout>
       <TaxCalculator />
+      <ExpertCta context="Numbers looking complicated — Indian income, a CRA letter, or a business in the mix?" />
       <SourceNote
         reviewed="August 2025"
         sources={[

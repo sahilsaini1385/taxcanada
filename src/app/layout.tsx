@@ -18,8 +18,8 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "MapleRoots — Tax & immigration help for Indian newcomers to Canada",
-    template: "%s · MapleRoots",
+    default: "ApnaCanada — Tax & immigration help for Indian newcomers to Canada",
+    template: "%s · ApnaCanada",
   },
   description:
     "Free, plain-language Canadian tax and immigration guidance built for Indian immigrants: tax calculator, CRS score, newcomer guides, and a personalized checklist. No account required.",

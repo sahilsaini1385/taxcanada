@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Callout from "@/components/Callout";
 import SourceNote from "@/components/SourceNote";
+import ExpertCta from "@/components/ExpertCta";
 
 export const metadata: Metadata = {
   title: "First-year tax guide for Indian newcomers",
@@ -150,6 +151,7 @@ export default function NewcomerGuidePage() {
         <Link href="/profile">personal checklist</Link>.
       </p>
 
+      <ExpertCta context="First return with Indian income, property, or NRE/NRO accounts?" />
       <SourceNote
         reviewed="August 2025"
         sources={[

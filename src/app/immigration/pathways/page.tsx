@@ -4,6 +4,7 @@ import Callout from "@/components/Callout";
 import Icon, { type IconName } from "@/components/Icon";
 import { LeafMark } from "@/components/Icon";
 import SourceNote from "@/components/SourceNote";
+import ExpertCta from "@/components/ExpertCta";
 
 export const metadata: Metadata = {
   title: "Immigration pathways compared",
@@ -105,6 +106,7 @@ export default function PathwaysPage() {
         anything else.
       </Callout>
 
+      <ExpertCta context="Not sure which pathway fits your situation?" />
       <SourceNote
         reviewed="August 2025"
         sources={[

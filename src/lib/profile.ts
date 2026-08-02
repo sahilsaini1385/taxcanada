@@ -42,7 +42,7 @@ export const EMPTY_PROFILE: UserProfile = {
   completedTasks: [],
 };
 
-const STORAGE_KEY = "mapleroots.profile.v1";
+const STORAGE_KEY = "apnacanada.profile.v1";
 
 export function loadProfile(): UserProfile {
   if (typeof window === "undefined") return EMPTY_PROFILE;

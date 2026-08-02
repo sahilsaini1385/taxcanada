@@ -10,6 +10,7 @@ const NAV = [
   { href: "/tax", label: "Taxes" },
   { href: "/immigration", label: "Immigration" },
   { href: "/profile", label: "My checklist" },
+  { href: "/expert", label: "Talk to an expert" },
 ];
 
 export default function Header() {
@@ -24,7 +25,7 @@ export default function Header() {
             <LeafMark size={22} />
           </span>
           <span className="font-display text-xl font-semibold tracking-tight text-ink">
-            MapleRoots
+            Apna<span className="text-saffron-600">Canada</span>
           </span>
         </Link>
 

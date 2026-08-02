@@ -21,7 +21,7 @@ export default function ImmigrationHub() {
         convenience, not secrets. Start by knowing your real score and your
         realistic options.
       </p>
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
+      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <Link
           href="/immigration/crs-calculator"
           className="card group transition hover:-translate-y-0.5 hover:shadow-lift"
@@ -48,6 +48,20 @@ export default function ImmigrationHub() {
             Express Entry, Provincial Nominee Programs, the study route,
             family sponsorship, and citizenship — with honest trade-offs for
             applicants from India.
+          </p>
+        </Link>
+        <Link
+          href="/immigration/programs"
+          className="card group transition hover:-translate-y-0.5 hover:shadow-lift"
+        >
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-spruce-50 text-spruce-700">
+            <Icon name="users" size={24} />
+          </span>
+          <h2 className="mt-4 font-semibold text-ink">Free newcomer programs</h2>
+          <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
+            Government and non-profit services in your province — free
+            language classes, job programs, credential help, and South Asian
+            community organizations.
           </p>
         </Link>
       </div>

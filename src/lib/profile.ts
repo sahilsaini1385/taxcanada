@@ -144,6 +144,13 @@ export function buildChecklist(p: UserProfile): ChecklistItem[] {
         "Free from Service Canada, needed to work and file taxes. If you have one, mark this done.",
     });
     items.push({
+      id: "settlement",
+      title: "Use the free settlement services you already qualify for",
+      detail:
+        "Government-funded language classes, job programs, and newcomer help — including South Asian community organizations in ON, BC, and Alberta.",
+      href: "/immigration/programs",
+    });
+    items.push({
       id: "firstreturn",
       title: "Understand your first tax return",
       detail:

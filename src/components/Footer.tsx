@@ -33,6 +33,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-ink-soft">
               <li><Link className="inline-block py-1 hover:text-spruce-700" href="/immigration/crs-calculator">CRS score calculator</Link></li>
               <li><Link className="inline-block py-1 hover:text-spruce-700" href="/immigration/pathways">Pathways compared</Link></li>
+              <li><Link className="inline-block py-1 hover:text-spruce-700" href="/immigration/programs">Free newcomer programs</Link></li>
               <li><Link className="inline-block py-1 hover:text-spruce-700" href="/profile">Personal checklist</Link></li>
               <li><Link className="inline-block py-1 hover:text-spruce-700" href="/expert">Talk to an expert</Link></li>
             </ul>
